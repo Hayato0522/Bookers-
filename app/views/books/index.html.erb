@@ -44,19 +44,15 @@
   </div>
 <% end %>
 
-<%= form_for(@book) do |f| %>
+<%= form_with model:@book, local:true do |f| %>
   
-  <div class="field">
-    <label for="book_title">Title</label>
-    <%= f.text_field :title %>
-  </div>
- 
-  <div class="field">
-    <label for="book_body">Body</label>
-    <%= f.text_area :body %>
-  </div>
+  <h4>Titele</h4>
+  <%= f.text_field :title %>
   
-  <div class="actions">
-    <%= f.submit 'Create Book' %>
-  </div>
+  <h4>Body</h4>
+  <%= f.text_area :body %>
+  
+  <%= f.submit "Create Book" %>
+  
+  
 <% end %>
